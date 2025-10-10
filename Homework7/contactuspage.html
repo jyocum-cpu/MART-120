@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <style>
+            body {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            h1 {
+                color: blue;
+            }
+            h2 {
+                color: black;
+            }
+        </style>
+    </head>
+    <body style="background-color:blanchedalmond">
+        <h1>Contact Us</h1>
+        <form action="contactuspage.html" method="POST">
+            <label for="flName">First & Last Name:</label>
+            <input type="text" id="flName" name="flName"><br>
+
+            <label for="emailaddress">Email Address:</label>
+            <input type="email" id="emailaddress" name="emailaddress"><br>
+
+            <h2>Accept Terms of Conditions</h2>
+            <input type="checkbox" id="terms_yes" name="terms" value="YES">
+            <label for="terms_yes">YES</label><br>
+            <input type="checkbox" id="terms_no" name="terms" value="NO">
+            <label for="terms_no">NO</label><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <br>
+        <a href="homepage.html">Return to Homepage</a>
+        <br>
+        <a href="secondpage.html">Go to Second Page</a>
+    </body>
+</html>

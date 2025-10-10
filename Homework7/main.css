@@ -1,0 +1,43 @@
+div{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgba(132, 254, 101, 0.804);
+    body {
+  
+  background-image: url("images/forest.jpg");
+  
+ 
+  background-size: cover;
+  
+  
+  background-position: center;
+  
+  
+  background-repeat: no-repeat;
+  
+  
+  background-attachment: fixed;}
+}
+
+span{
+    font-family:'Gill Sans', 'Gill Sans MT' 'Trebuchet MS', sans-serif;
+    color:rgba(235, 189, 143, 0.692);
+    font-size:x-large
+}
+.border-style {
+        border: 1px solid rgb(0, 59, 0);
+        padding: 10px;
+}
+highlight {
+      color: darkgreen;
+      background-color: yellow;
+    }
+    #header-main, #intro-text {
+      color: rgba(102, 252, 117, 0.749);
+      font-weight: bold;
+    }
+a:link, a:visited {
+    color: rgba(139, 251, 102, 0.812); 
+}
+
+a:active {
+    color: darkgreen; 
+} 
