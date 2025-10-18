@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <style>
+            body {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            h1 {
+                color: blue;
+            }
+            h2 {
+                color: black;
+            }
+            .Error {
+                background-color: red;
+                border: 2px solid darkred;
+            }
+            .error-message {
+                color: red;
+                font-size: 0.9em;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body style="background-color:blanchedalmond">
+        <h1>Contact Us</h1>
+        <form action="contactuspage.html" method="POST" onsubmit="return validateForm();">
+            <table>
+                <tr>
+                    <td><label for="flName">First & Last Name:</label></td>
+                    <td>
+                        <input type="text" id="flName" name="flName">
+                        <p class="error-message" id="flName-error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="emailaddress">Email Address:</label></td>
+                    <td>
+                        <input type="email" id="emailaddress" name="emailaddress">
+                        <p class="error-message" id="email-error"></p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><h2>Accept Terms of Conditions</h2></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="terms_yes" name="terms" value="YES">
+                        <label for="terms_yes">YES</label>
+                    </td>
+                    <td>
+                        <p class="error-message" id="terms-error"></p>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+
+        <br>
+        <a href="homepage.html">Return to Homepage</a>
+        <br>
+        <a href="secondpage.html">Go to Second Page</a>
+        
+        <script>
+            function validateForm() {
+                var formIsValid = true;
+
+                var flNameInput = document.getElementById("flName");
+                var flNameErrorMsg = document.getElementById("flName-error");
+                var emailInput = document.getElementById("emailaddress");
+                var emailErrorMsg = document.getElementById("email-error");
+                var termsCheckbox = document.getElementById("terms_yes");
+                var termsErrorMsg = document.getElementById("terms-error");
+
+                flNameErrorMsg.textContent = "";
+                emailErrorMsg.textContent = "";
+                termsErrorMsg.textContent = "";
+                flNameInput.classList.remove("Error");
+                emailInput.classList.remove("Error");
+                
+                var flNameValue = flNameInput.value.trim();
+                if (flNameValue === "") {
+                    flNameInput.classList.add("Error");
+                    flNameErrorMsg.textContent = "Oops... First & Last name field is empty!";
+                    flNameInput.focus();
+                    formIsValid = false;
+                }
+
+                var emailValue = emailInput.value.trim();
+                var emailPattern = /^[^s@]+@[^s@]+\.[^s@]+$/;
+                if (emailValue === "") {
+                    emailInput.classList.add("Error");
+                    emailErrorMsg.textContent = "Oops... the Email Address field is empty!";
+                    emailInput.focus();
+                    formIsValid = false;
+                } else if (!emailPattern.test(emailValue)) {
+                    emailInput.classList.add("Error");
+                    emailErrorMsg.textContent = "Please enter a valid email address!";
+                    emailInput.focus();
+                    formIsValid = false;
+                }
+                
+                if (!termsCheckbox.checked) {
+                    termsErrorMsg.textContent = "You must agree to the Terms and Conditions.";
+                    formIsValid = false;
+                }
+                
+                return formIsValid;
+            }
+        </script>
+    </body>
+</html>
