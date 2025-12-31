@@ -178,4 +178,10 @@ footer {
         width: 250px;
         height: 250px;
     }
+    /* Styling for the JavaScript Active Link */
+nav ul li a.active {
+    color: var(--accent); /* Your Teal Color */
+    border-bottom: 2px solid var(--accent);
+    transition: all 0.3s ease;
+}
 }
